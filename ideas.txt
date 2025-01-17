@@ -1,0 +1,15 @@
+Essential Components:
+Players: Represent players with attributes like hand, field, deck, trash, life, and DON!! energy.
+Cards: Include basic attributes (name, effects, cost, etc.) and a way to execute their effects.
+Game State: A global representation of the current game state, including:
+    Player information (hand size, field cards, life points, etc.)
+    Current turn and phase (e.g., draw phase, main phase, battle phase)
+    DON!! energy levels for each player
+    Win/loss conditions
+Actions: Define possible actions for the AI:
+    Draw a card
+    Play a card
+    Activate a card's effect
+    Attack with a character
+    Use DON!! cards
+    End the turn
