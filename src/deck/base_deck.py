@@ -1,4 +1,4 @@
-from src.deck.card.base import BaseCard
+from src.deck.card.base_card import BaseCard
 
 
 class BaseDeck:

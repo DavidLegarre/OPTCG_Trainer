@@ -1,4 +1,4 @@
-from src.effects.base import BaseCardEffect
+from src.effects.base_effect import BaseCardEffect
 
 
 class DrawCardEffect(BaseCardEffect):
