@@ -1,6 +1,23 @@
 from dataclasses import dataclass
+from enum import Enum
 from typing import Optional
 from src.effects.base_effect import BaseCardEffect
+
+
+class CardType(Enum):
+    EVENT = "event"
+    CHARACTER = "character"
+    LEADER = "leader"
+    STAGE = "stage"
+
+
+class CardColor(Enum):
+    RED = "red"
+    BLUE = "blue"
+    GREEN = "green"
+    YELLOW = "yellow"
+    PURPLE = "purple"
+    BLACK = "black"
 
 
 @dataclass
@@ -9,12 +26,12 @@ class BaseCardData:
     description: str
     id: int
     category: str
-    color: Optional[str | list[str]]
-    card_type: Optional[str]
+    color: Optional[CardColor | list[CardColor]]
+    card_type: CardType
     effects: Optional[list[BaseCardEffect]]
 
 
-class BaseCard:
+class Card:
     def __init__(self, data: BaseCardData):
         self.name = data.name
         self.description = data.description

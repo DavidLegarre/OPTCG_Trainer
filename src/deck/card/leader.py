@@ -1,14 +1,8 @@
-from src.card.base import BaseCard
+from src.deck.card.base_card import BaseCardData, Card
 
 
-class LeaderCard(BaseCard):
-    def __init__(
-        self,
-        power: int,
-        life: int,
-        *args,
-        **kwargs,
-    ):
-        super().__init__(*args, **kwargs)
-        self.power = power
+class LeaderCard(Card):
+    def __init__(self, data: BaseCardData, life: int, power: int):
+        super().__init__(data)
         self.life = life
+        self.power = power
