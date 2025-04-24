@@ -6,3 +6,4 @@ class CharacterCard(Card):
         super().__init__(name, "Character", cost, color, effects)
         self.power = power
         self.counter = counter
+        self.attached_don = 0

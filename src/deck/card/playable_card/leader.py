@@ -6,3 +6,4 @@ class LeaderCard(Card):
         super().__init__(data)
         self.life = life
         self.power = power
+        self.attached_don = 0
