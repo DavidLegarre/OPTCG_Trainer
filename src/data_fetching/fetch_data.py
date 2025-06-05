@@ -22,5 +22,3 @@ def fetch_all_card_data() -> List[dict]:
         json.dump(all_cards, f, ensure_ascii=False, indent=2)
 
     return all_cards
-
-
