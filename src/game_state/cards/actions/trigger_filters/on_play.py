@@ -5,6 +5,10 @@ from src.game_state.cards.actions.trigger import Trigger
 from src.game_state.cards.effect import Effect
 
 
+def on_play_action():
+    pass
+
+
 def on_play_filter(card_text: str) -> List[Effect]:
     effects = []
     match = re.search(r"\[\s*on\s+play\s*\](.*)", card_text, flags=re.IGNORECASE)
@@ -18,10 +22,6 @@ def on_play_filter(card_text: str) -> List[Effect]:
     if m:
         count = int(m.group(1))
 
-        def action(game_state, source_card, player):
-            print(f"{player.name} draws {count} cards.")
-            # TODO: implement logic
-
-        effects.append(Effect(trigger=Trigger.ON_PLAY, action=action))
+        effects.append(Effect(trigger=Trigger.ON_PLAY, action=on_play_action))
 
     return effects
