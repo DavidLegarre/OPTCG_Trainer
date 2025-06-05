@@ -1,18 +1,21 @@
-from src.data_fetching.data_test import test_data
-from src.data_fetching.fetch_data import fetch_all_card_data
-from src.game_state.cards.actions.triger_parser import parse_effects
-from loguru import logger
+from src.game_state.game_state import Game
+from src.game_state.main_menu_state.main_menu_state import MainMenuState
+from src.game_state.play_state.play_state import PlayState
 
 
 def main():
-    text = "[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order."
+    # Example usage
+    game = Game()
+    main_menu = MainMenuState()
+    play_state = PlayState()
 
-    text = text.strip().lower()
-    logger.info(text)
+    game.change_state(main_menu)
+    game.update()
+    game.render()
 
-    effects = parse_effects(text)
-
-    print(effects)
+    game.change_state(play_state)
+    game.update()
+    game.render()
 
 
 if __name__ == "__main__":
