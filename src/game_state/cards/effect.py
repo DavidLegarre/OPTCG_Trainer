@@ -1,6 +1,13 @@
+from abc import ABC, abstractmethod
 from typing import Callable
 
 from src.game_state.cards.actions.trigger import Trigger
+
+
+class BaseEffect(ABC):
+    @abstractmethod
+    def resolve(self):
+        pass
 
 
 class Effect:
